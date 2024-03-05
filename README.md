@@ -1,10 +1,29 @@
-# World Happiness Report 2023 - Exploratory Data Analysis
+# <a id='toc1_'></a>[World Happiness Report 2023 - Exploratory Data Analysis](#toc0_)
 
 The World Happiness Report is an annual publication that ranks countries based on their happiness levels, as measured by a range of economic, social, and political indicators. The report is produced by the United Nations Sustainable Development Solutions Network. It is designed to provide policymakers, academics, and the general public with insights into the factors that contribute to happiness and well-being around the world.
 
 In this project, I'll be using World Happiness Report 2023 data to visually analyze what factors make people in a country happy. The dataset can be found [here](https://www.kaggle.com/datasets/atom1991/world-happiness-report-2023). 
 
-## Setting up
+**Table of contents**<a id='toc0_'></a>    
+- [World Happiness Report 2023 - Exploratory Data Analysis](#toc1_)    
+  - [Setting up](#toc1_1_)    
+  - [The World Happiness Report Dataset](#toc1_2_)    
+  - [Visualizations](#toc1_3_)    
+    - [Relationship between factors](#toc1_3_1_)    
+    - [Macro geo-spatial analysis](#toc1_3_2_)    
+  - [Conclusion](#toc1_4_)    
+  - [Extra: Machine Learning for EDA](#toc1_5_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+## <a id='toc1_1_'></a>[Setting up](#toc0_)
 We will start by importing the necessary libraries and setting style for our visualizations.
 
 
@@ -22,7 +41,7 @@ matplotlib.rcParams['font.size'] = 14
 matplotlib.rcParams['figure.facecolor'] = '#00000000'
 ```
 
-## The World Happiness Report Dataset
+## <a id='toc1_2_'></a>[The World Happiness Report Dataset](#toc0_)
 Let's have a look at the dataset's head and tail to get an idea of what it's like.
 
 
@@ -803,9 +822,9 @@ df[df.isna().any(axis=1)]
 
 A missing value has been identified in the Healthy life expectancy column for Palestine. I noted this for future reference but decided to leave the value as is, as imputation could bias the information. Leaving this missing value will not affect the analysis.
 
-## Visualizations
+## <a id='toc1_3_'></a>[Visualizations](#toc0_)
 
-### Relationship between factors
+### <a id='toc1_3_1_'></a>[Relationship between factors](#toc0_)
 
 Using `sns.pairplot()` to have a look on relationship among variables. There seems to be a strong positive relationship among most of them.
 
@@ -818,13 +837,13 @@ sns.pairplot(df)
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x216231c8450>
+    <seaborn.axisgrid.PairGrid at 0x167571cc250>
 
 
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_20_1.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_21_1.png)
     
 
 
@@ -842,7 +861,7 @@ sns.heatmap(corr, mask=mask, annot=True, cmap=cmap, vmax=.3, center=0,
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_22_0.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_23_0.png)
     
 
 
@@ -871,7 +890,7 @@ plt.xlabel(None)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_25_1.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_26_1.png)
     
 
 
@@ -902,7 +921,7 @@ plt.tight_layout(pad=2);
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_28_0.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_29_0.png)
     
 
 
@@ -927,7 +946,7 @@ plt.xlabel(None)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_30_1.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_31_1.png)
     
 
 
@@ -956,7 +975,7 @@ plt.tight_layout(pad=2)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_32_0.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_33_0.png)
     
 
 
@@ -985,7 +1004,7 @@ plt.tight_layout(pad=2)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_35_0.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_36_0.png)
     
 
 
@@ -994,7 +1013,7 @@ plt.tight_layout(pad=2)
 - Correlation between happiness score and generosity is only 4.4%. One thing that can be inferred from it is that maybe, the happiest countries have the least proportion of population that's needy and hence they are not necessarily the most generous nations.
 - It's clearly visible that countries with highest corruption are least happy. However, the relationship doesn't seem too linear as it can be seen above. Correlation between happiness score and perceptions of corruption is only -47%.
 
-### Macro geo-spatial analysis
+### <a id='toc1_3_2_'></a>[Macro geo-spatial analysis](#toc0_)
 
 We can start by plotting the happiness score of countries on a world map to get a rough overview. 
 
@@ -1024,7 +1043,7 @@ Image(image_path)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_39_0.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_40_0.png)
     
 
 
@@ -1048,20 +1067,20 @@ plt.ylabel(None)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_41_1.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_42_1.png)
     
 
 
 - The box plot analysis indicates that higher median happiness scores are observed in the Western Europe, North America, and ANZ regions compared to other regions. These are developed regions with more established economies and social systems, which may explain the trend.
 - An outlier is observed in the South Asia region, where Afghanistan has a notably lower happiness score. This may be attributed to political instability and hence lower social support and freedom in Afghanistan even though it's GDP per capita is not the worst, as we discussed.
 
-## Conclusion
+## <a id='toc1_4_'></a>[Conclusion](#toc0_)
 
 The comprehensive analysis of happiness scores around the world highlights the importance of economic, social, and health factors in determining societal well-being. The findings suggests that GDP per capita, Social support, Healthy life expectancy, and Freedom to make life choices has the highest impact on happiness levels, while reducing corruption can help improve stability. Hence, top happiest countries can be seen among the top ten countries in all these factors. Generosity seem to be a less important factor as the data speaks for itself. 
 
 By prioritizing happiness as a key goal for individuals, communities, and policymakers, we can work towards creating a world that is more just, equitable, and fulfilling for all.
 
-## Extra: Machine Learning for EDA
+## <a id='toc1_5_'></a>[Extra: Machine Learning for EDA](#toc0_)
 We can use baseline ML models to anticipate feature importances. This is a really nice feature of supervised learning beyond predictive analysis.
 
 One of the best models for extracting feature importances is Random Forest as it is very robust yet simple.
@@ -1112,7 +1131,7 @@ plt.barh(feat_imp.index, feat_imp.values)
 
 
     
-![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_50_1.png)
+![png](EDA-world-happiness-report-2023_files/EDA-world-happiness-report-2023_51_1.png)
     
 
 
