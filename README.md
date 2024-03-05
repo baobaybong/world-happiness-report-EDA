@@ -18,7 +18,6 @@ import plotly.express as px
 import warnings
 warnings.filterwarnings("ignore")
 
-# sns.set_style('darkgrid')
 matplotlib.rcParams['font.size'] = 14
 matplotlib.rcParams['figure.facecolor'] = '#00000000'
 ```
@@ -40,19 +39,7 @@ df.tail()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -211,19 +198,7 @@ df.tail()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -429,19 +404,7 @@ df.head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -605,19 +568,7 @@ describe(df)
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -813,19 +764,7 @@ df[df.isna().any(axis=1)]
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -879,7 +818,7 @@ sns.pairplot(df)
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x1eca43bc250>
+    <seaborn.axisgrid.PairGrid at 0x216231c8450>
 
 
 
@@ -1077,7 +1016,7 @@ I used the `plotly` library to create an interactive map, but it does not work n
 #     height=700)
 
 from IPython.display import Image
-image_path = 'images/global_happiness_map.png'
+image_path = 'images/global-happiness-map.png'
 Image(image_path)
 ```
 
