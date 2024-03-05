@@ -1060,7 +1060,6 @@ plt.ylabel(None)
 
 
 
-    Text(0, 0.5, '')
 
 
 
