@@ -837,7 +837,6 @@ sns.pairplot(df)
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x167571cc250>
 
 
 
@@ -856,7 +855,8 @@ corr = df.corr(numeric_only=True)
 mask = np.triu(np.ones_like(corr, dtype=bool))
 cmap = sns.diverging_palette(230, 20, as_cmap=True)
 sns.heatmap(corr, mask=mask, annot=True, cmap=cmap, vmax=.3, center=0,
-            square=True, linewidths=.5, cbar_kws={"shrink": .5});
+            square=True, linewidths=.5, cbar_kws={"shrink": .5})
+plt.tick_params(axis='x', labelrotation=75)
 ```
 
 
@@ -940,7 +940,6 @@ plt.xlabel(None)
 
 
 
-    Text(0.5, 0, '')
 
 
 
@@ -1125,7 +1124,6 @@ plt.barh(feat_imp.index, feat_imp.values)
 
 
 
-    <BarContainer object of 6 artists>
 
 
 
